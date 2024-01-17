@@ -3,6 +3,8 @@ import 'package:david_carretos/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../services/platform_discover.dart';
+
 class BottomItem extends StatelessWidget {
   const BottomItem({super.key});
 
@@ -20,8 +22,11 @@ class BottomItem extends StatelessWidget {
       padding: const EdgeInsets.only(top: 80),
       child: GestureDetector(
         onTap: () {
-          _launchWhatsAppWeb();
-          _launchWhatsApp();
+          if (PlatformDiscover.isMobile) {
+            _launchWhatsApp();
+          } else {
+            _launchWhatsAppWeb();
+          }
         },
         child: Container(
           alignment: Alignment.center,
