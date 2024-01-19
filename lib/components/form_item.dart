@@ -18,7 +18,7 @@ class FormItem extends StatelessWidget {
               style: TextStyle(
                   color: AppColors.primaryColor,
                   fontFamily: "MPLUSRounded1c",
-                  fontSize: 32),
+                  fontSize: 22),
               textAlign: TextAlign.center,
             ),
             Padding(
