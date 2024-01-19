@@ -11,12 +11,12 @@ class CargaScreen extends StatelessWidget {
     const List items = carga;
 
     return Padding(
-      padding: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0.0),
+      padding: const EdgeInsets.fromLTRB(16.0, 18.0, 16.0, 0.0),
       child: CustomScrollView(
         slivers: <Widget>[
           SliverToBoxAdapter(
             child: Padding(
-              padding: const EdgeInsets.only(bottom: 16.0),
+              padding: const EdgeInsets.only(bottom: 35.0),
               child: Text(
                 "O que vamos transportar?",
                 style: TextStyle(
@@ -30,9 +30,12 @@ class CargaScreen extends StatelessWidget {
           SliverGrid(
             delegate: SliverChildBuilderDelegate(
               (context, index) {
-                return CargaItem(
-                  imageURI: items[index]['image'],
-                  itemTitle: items[index]['name'],
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 25),
+                  child: CargaItem(
+                    imageURI: items[index]['image'],
+                    itemTitle: items[index]['name'],
+                  ),
                 );
               },
               childCount: items.length,

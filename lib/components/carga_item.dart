@@ -17,29 +17,33 @@ class CargaItem extends StatelessWidget {
       elevation: 5,
       child: Column(
         children: <Widget>[
-          Image(
-            height: 122,
-            width: double.infinity,
-            image: AssetImage(imageURI),
-            fit: BoxFit.cover,
+          Expanded(
+            child: Image(
+              height: 122,
+              width: double.infinity,
+              image: AssetImage(imageURI),
+              fit: BoxFit.cover,
+            ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 25),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 15),
-                  child: Text(
-                    itemTitle,
-                    style: TextStyle(
-                        fontSize: 16, color: AppColors.backGraundColor),
+            padding: const EdgeInsets.only(top: 15),
+            child: Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 10),
+                    child: Text(
+                      itemTitle,
+                      style: TextStyle(
+                          fontSize: 13, color: AppColors.backGraundColor),
+                    ),
                   ),
-                ),
-                QuantitySelector(
-                    onChange: (value) =>
-                        TransRequest().addItem(value, itemTitle))
-              ],
+                  QuantitySelector(
+                      onChange: (value) =>
+                          TransRequest().addItem(value, itemTitle))
+                ],
+              ),
             ),
           ),
         ],
