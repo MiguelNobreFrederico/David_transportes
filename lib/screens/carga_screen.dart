@@ -16,12 +16,12 @@ class CargaScreen extends StatelessWidget {
         slivers: <Widget>[
           SliverToBoxAdapter(
             child: Padding(
-              padding: const EdgeInsets.only(bottom: 30.0),
+              padding: const EdgeInsets.only(bottom: 16.0),
               child: Text(
                 "O que vamos transportar?",
                 style: TextStyle(
                     fontFamily: "MPLUSRounded1c",
-                    fontSize: 32,
+                    fontSize: 22,
                     color: AppColors.primaryColor),
                 textAlign: TextAlign.center,
               ),
@@ -47,9 +47,9 @@ class CargaScreen extends StatelessWidget {
               childAspectRatio:
                   MediaQuery.of(context).orientation == Orientation.landscape
                       ? 1.2
-                      : 180 / 194,
+                      : 158 / 194,
             ),
-          ),
+          )
         ],
       ),
     );

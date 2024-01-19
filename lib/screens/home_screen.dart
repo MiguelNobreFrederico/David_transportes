@@ -31,6 +31,7 @@ class HomeScreen extends StatelessWidget {
       floatingActionButton: Padding(
         padding: const EdgeInsets.only(bottom: 45),
         child: FloatingActionButton(
+          elevation: 5,
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) {
               return const FormScreen();

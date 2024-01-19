@@ -14,47 +14,32 @@ class CargaItem extends StatelessWidget {
     return Card(
       clipBehavior: Clip.hardEdge,
       color: AppColors.secondaryColor,
-      elevation: 0,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      elevation: 5,
+      child: Column(
         children: <Widget>[
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  AspectRatio(
-                    aspectRatio: 5 / 3,
-                    child: Image(
-                      image: AssetImage(imageURI),
-                      fit: BoxFit.cover,
-                    ),
+          Image(
+            height: 122,
+            width: double.infinity,
+            image: AssetImage(imageURI),
+            fit: BoxFit.cover,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 25),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 15),
+                  child: Text(
+                    itemTitle,
+                    style: TextStyle(
+                        fontSize: 16, color: AppColors.backGraundColor),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 45),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          itemTitle,
-                          style: TextStyle(
-                            color: AppColors.backGraundColor,
-                            fontSize: 11,
-                            fontWeight: FontWeight.w900,
-                          ),
-                        ),
-                        QuantitySelector(
-                            onChange: (value) =>
-                                TransRequest().addItem(value, itemTitle))
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+                ),
+                QuantitySelector(
+                    onChange: (value) =>
+                        TransRequest().addItem(value, itemTitle))
+              ],
             ),
           ),
         ],

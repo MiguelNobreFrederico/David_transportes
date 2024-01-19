@@ -48,7 +48,7 @@ class _QuantitySelectorState extends State<QuantitySelector> {
         IconButton(
           icon: Icon(
             Icons.remove,
-            size: 15,
+            size: 20,
             color: AppColors.backGraundColor,
           ),
           onPressed: decrementQuantity,
@@ -80,7 +80,7 @@ class _QuantitySelectorState extends State<QuantitySelector> {
         IconButton(
           icon: Icon(
             Icons.add,
-            size: 15,
+            size: 20,
             color: AppColors.backGraundColor,
           ),
           onPressed: incrementQuantity,
