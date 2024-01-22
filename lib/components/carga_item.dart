@@ -27,23 +27,21 @@ class CargaItem extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(top: 15),
-            child: Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 10),
-                    child: Text(
-                      itemTitle,
-                      style: TextStyle(
-                          fontSize: 13, color: AppColors.backGraundColor),
-                    ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: Text(
+                    itemTitle,
+                    style: TextStyle(
+                        fontSize: 13, color: AppColors.backGraundColor),
                   ),
-                  QuantitySelector(
-                      onChange: (value) =>
-                          TransRequest().addItem(value, itemTitle))
-                ],
-              ),
+                ),
+                QuantitySelector(
+                    onChange: (value) =>
+                        TransRequest().addItem(value, itemTitle))
+              ],
             ),
           ),
         ],
